@@ -34,7 +34,8 @@ exports.signup = async(req,res)=>{
             const newUser = new users({
              name,
              email,
-             password
+             password,
+             blogs:[]
             })
             await newUser.save()
             res.status(200).json(newUser)
@@ -65,3 +66,34 @@ exports.login=async(req,res)=>{
 
 
 }
+
+
+
+
+// exports.login=async (req,res)=>{
+//     console.log("inside login function");
+//     const{email,password}=req.body
+//     try{
+
+//       //check user exist
+//       const existingUser = await users.findOne({email,password})
+
+//       if(existingUser){
+
+//         //generate token
+//         const token=jwt.sign({userId:existingUser._id},"superSecretKey123")
+
+//         res.status(200).json({
+//             existingUser,
+//             role:"user",
+//             token
+//         })
+//       }else{
+//         res.status(404).json("incorrect email/password")
+//       }
+
+//     }catch(err){
+//         res.status(401).json(`Error!!!Transaction failed:${err}`)
+
+//     }
+// }

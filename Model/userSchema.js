@@ -16,7 +16,12 @@ const userSChema =new mongoose.Schema({
         type:String,
         required:true,
         minLength:6
-    }
+    },
+    blogs:[{
+        type:mongoose.Types.ObjectId,
+        ref:"blogs",
+        required:true
+    }]
 
 })
 

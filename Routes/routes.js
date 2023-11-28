@@ -17,6 +17,8 @@ router.get("/blog/allblog",blogController.getAllBlogs)
 router.post('/blog/add',blogController.addBlog)
 router.put('/blog/update/:id',blogController.updateBlog)
 router.get('/blog/allblog/:id',blogController.getById)
+router.delete('/blog/allblog/delete/:id',blogController.deleteBlog)
+router.get('/user/:id',blogController.getByUserId)
 
 
 //export router

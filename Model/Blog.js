@@ -15,7 +15,8 @@ image:{
     required:true
 },
 user:{
-    type:String,
+    type:mongoose.Types.ObjectId,
+    ref:"users",
     required:true
 },
 
